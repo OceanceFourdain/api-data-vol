@@ -2,7 +2,7 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\Product;
+use App\Models\DataVol;
 use Illuminate\Http\Request;
 
 class ProductController extends Controller
@@ -18,29 +18,20 @@ class ProductController extends Controller
     }
 
     public function index() {
-        return response()->json(Product::all());
+        return response()->json(DataVol::all());
         //dd('index');
-    }
-    public function store(Request $request) {
-        $this->validate($request, [
-            "name" => "required|max:255",
-            "description" => "",
-            "historiqueVol" => "",
-        ]);
-        return response()->json(Product::create($request->all()));
-        //dd('store');
     }
     public function show($id) {
         dd($id);
     }
     public function edit($id) {
         dd($id);
-        $product = Product::findOrFail($id);
+        $product = DataVol::findOrFail($id);
         $product->update();
         return response()->json(["message" => "Update id vol successfuly"], 200);
     }
     public function delete($id) {
-        $product = Product::findOrFail($id);
+        $product = DataVol::findOrFail($id);
         $product->delete();
         return response()->json(["message" => "Id vol delete successfully"], 200);
         dd($id);

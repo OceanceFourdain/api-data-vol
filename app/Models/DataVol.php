@@ -12,7 +12,7 @@ class DataVol extends Model
      * @var string[]
      */
     protected $fillable = [
-        'nameAvion', 'typeAvion', 'dateVol', 'durationVol'
+        'id', 'nameAvion', 'typeAvion', 'dateVol', 'durationVol'
     ];
 
     /**
